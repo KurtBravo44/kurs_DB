@@ -5,12 +5,16 @@ from api.get_vac import get_vac
 from api.get_emp_vac import get_emp_vac
 
 def run():
+    """ Функция возвращает вакансии, которые необходимо загрузить в БД.
+    Вакансии тех компаний, который выбрал пользователь"""
+
     user_answer = input('Ваша профессия: ')
     list_of_id_emp = get_vac(HH_API(user_answer).get_responce())
     vac_to_db = get_emp_vac(list_of_id_emp)
     return vac_to_db
 
 def insert_to_db():
+    """Загрузка данный в БД"""
 
     vac_to_db = run()
     conn = psycopg2.connect(

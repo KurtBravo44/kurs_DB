@@ -1,13 +1,7 @@
-from database.db_insert import insert_to_db
-from database.db_select import DBManager
-
-
+from user_loop import user_loop
 
 def main():
-#    insert_to_db()
-    p = DBManager
-    DBManager.get_companies_and_vacancies_count(p)
-
+    user_loop()
 
 if __name__ == '__main__':
     main()
